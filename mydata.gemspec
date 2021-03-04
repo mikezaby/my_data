@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "faraday", "~> 1.0"
   spec.add_dependency "activesupport", ">= 3.2"
   spec.add_dependency "activemodel", ">= 3.2"
+  spec.add_dependency "nokogiri", ">= 1.10"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
