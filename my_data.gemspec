@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-require_relative "lib/mydata/version"
+require_relative "lib/my_data/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "mydata"
-  spec.version       = Mydata::VERSION
+  spec.name          = "my_data"
+  spec.version       = MyData::VERSION
   spec.authors       = ["Michalis Zamparas"]
   spec.email         = ["mikezaby@gmail.com"]
 
   spec.summary       = "Api client for AADE myData"
   spec.description   = "Api client for AADE myData"
-  spec.homepage      = "https://github.com/mikezaby/mydata"
+  spec.homepage      = "https://github.com/mikezaby/my_data"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 

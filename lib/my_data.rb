@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "mydata/version"
+require_relative "my_data/version"
 
-module Mydata
+module MyData
   class Error < StandardError; end
   # Your code goes here...
 end
