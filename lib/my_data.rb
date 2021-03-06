@@ -3,6 +3,7 @@
 require "active_model"
 require "active_support/all"
 require "faraday"
+require "nokogiri"
 
 require_relative "my_data/version"
 
@@ -17,5 +18,6 @@ module MyData
   autoload :Resource, "my_data/resource"
   autoload :Resources, "my_data/resources"
   autoload :TypeCaster, "my_data/type_caster"
+  autoload :XmlGenerator, "my_data/xml_generator"
   autoload :Xsd, "my_data/xsd"
 end

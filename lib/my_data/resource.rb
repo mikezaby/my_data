@@ -172,5 +172,10 @@ module MyData
 
       hash
     end
+
+    def to_xml
+      generator = MyData::XmlGenerator.new(self)
+      generator.to_xml
+    end
   end
 end
