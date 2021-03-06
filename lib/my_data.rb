@@ -19,5 +19,6 @@ module MyData
   autoload :Resources, "my_data/resources"
   autoload :TypeCaster, "my_data/type_caster"
   autoload :XmlGenerator, "my_data/xml_generator"
+  autoload :XmlParser, "my_data/xml_parser"
   autoload :Xsd, "my_data/xsd"
 end
