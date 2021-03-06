@@ -1,6 +1,28 @@
+Metrics/ModuleLength:
+  Max: 200
+
+Metrics/MethodLength:
+    Max: 15
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - class_methods
+
+Style/Documentation:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  EnforcedStyle: brackets
+
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Style/ClassAndModuleChildren:
+  Enabled: false
 
 Style/StringLiteralsInInterpolation:
   Enabled: true
