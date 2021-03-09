@@ -9,6 +9,10 @@ require_relative "my_data/version"
 module MyData
   class Error < StandardError; end
 
+  def self.root
+    File.expand_path '../..', __FILE__
+  end
+
   autoload :Client, "my_data/client"
   autoload :Resource, "my_data/resource"
   autoload :Resources, "my_data/resources"
