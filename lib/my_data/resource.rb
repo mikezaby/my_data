@@ -27,6 +27,12 @@ module MyData
         @container[:attributes] = opts
       end
 
+      def xsd_structure
+        MyData::Xsd::Structure.resource_attributes(name).each do |attrs|
+          attribute(*attrs)
+        end
+      end
+
       # @param name [String] the name of the attribute
       # @param type [Symbol] the type of the attribute (:string, :integer, etc)
       # @param opts [Hash] options for custom parsing
