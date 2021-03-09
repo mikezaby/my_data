@@ -17,4 +17,5 @@ module MyData
   autoload :Resource, "my_data/resource"
   autoload :Resources, "my_data/resources"
   autoload :TypeCaster, "my_data/type_caster"
+  autoload :Xsd, "my_data/xsd"
 end
