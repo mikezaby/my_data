@@ -18,7 +18,7 @@ module MyData
     private
 
     def headers
-      @header ||= {
+      @headers ||= {
         "Content-Type" => "application/xml",
         "Accept" => "application/xml",
         "aade-user-id" => @user_id,
