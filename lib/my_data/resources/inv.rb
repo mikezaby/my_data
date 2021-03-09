@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module MyData::Resources::Inv
+  autoload :InvoicesDoc, "my_data/resources/inv/invoices_doc"
   autoload :AadeBookInvoiceType, "my_data/resources/inv/aade_book_invoice_type"
   autoload :AddressType, "my_data/resources/inv/address_type"
   autoload :InvoiceHeaderType, "my_data/resources/inv/invoice_header_type"
