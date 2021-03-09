@@ -3,6 +3,7 @@
 module MyData
   module Resource
     extend ActiveSupport::Concern
+    include ActiveModel::Validations
     include ActiveModel::Serializers::JSON
 
     ALLOWED_ATTRIBUTE_OPTS = [
@@ -29,7 +30,12 @@ module MyData
 
       def xsd_structure
         MyData::Xsd::Structure.resource_attributes(name).each do |attrs|
-          attribute(*attrs)
+          e_name, type, opts = attrs
+          required = opts.delete :required
+
+          attribute(e_name, type, opts)
+
+          validates_presence_of e_name if required
         end
       end
 

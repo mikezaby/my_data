@@ -29,6 +29,10 @@ class MyData::Xsd::Element
     @collection = element.to_s.include? "maxOccurs"
   end
 
+  def required?
+    element.attributes["minOccurs"]&.value != "0"
+  end
+
   def inspect
     "Element: { name: #{name.to_json}, type: #{type.to_json}, collection: #{collection?} }"
   end

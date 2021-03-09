@@ -16,7 +16,8 @@ module MyData::Xsd::Structure
         type,
         {
           collection: element.collection?,
-          class_name: type == :resource ? classify(element.type) : nil
+          class_name: type == :resource ? classify(element.type) : nil,
+          required: element.required?
         }
       ]
     end
