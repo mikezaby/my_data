@@ -15,7 +15,20 @@ module MyData
       end
     end
 
+    def send_invoice(invoice_doc)
+      response = connection.post("SendInvoices", invoice_doc)
+
+      response_parser(response.body)
+    end
+
     private
+
+    def response_parser(response)
+      fixed_xml = response.sub(/^.+/, "").sub("</string>", "").strip
+                          .gsub("&lt;", "<").gsub("&gt;", ">")
+
+      Hash.from_xml(fixed_xml)
+    end
 
     def headers
       @headers ||= {
