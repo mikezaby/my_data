@@ -133,6 +133,28 @@ module MyData
       attributes
     end
 
+    def resources
+      attributes.select { |k, _| self.class.mappings[k][:resource] }.to_h
+    end
+
+    def valid?
+      is_valid = super && resources.values.flatten.compact.map(&:valid?).all?
+
+      return true if is_valid
+
+      resources.compact.each do |k, resource|
+        rs = resource.is_a?(Array) ? resource : [resource]
+
+        next if rs.all?(&:valid?)
+
+        rs.each do |r|
+          errors.add(k, :invalid_resource, message: r.errors.full_messages.join(", "))
+        end
+      end
+
+      false
+    end
+
     def inspect
       "#{self.class}(#{as_json.to_s.gsub(/^{|}$/, "")})"
     end
