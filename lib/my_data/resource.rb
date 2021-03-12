@@ -64,6 +64,18 @@ module MyData
         define_attr_setter name, collection: !!opts[:collection]
       end
 
+      def inspect
+        format_attrs = attributes.map do |name|
+          mapping = mappings[name]
+          type = mapping[:type] == :resource ? mapping[:resource].name : mapping[:type]
+          type = mapping[:collection] ? "[#{type}]" : type
+
+          "#{name}: #{type}"
+        end
+
+        "#{name} #{format_attrs.join(", ")}"
+      end
+
       private
 
       def attr_mappings(name, type, opts)
