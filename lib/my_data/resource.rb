@@ -8,7 +8,8 @@ module MyData
 
     ALLOWED_ATTRIBUTE_OPTS = [
       :class_name,
-      :collection
+      :collection,
+      :collection_element_name
     ].freeze
 
     included do
@@ -44,6 +45,8 @@ module MyData
       # @param opts [Hash] options for custom parsing
       # @option class_name [String] the name of the resource
       # @option collection [Boolean] when the required attribute is a collection
+      # @option collection_element_name [String] when we set collection_element_name
+      #                                          we nested the elements of collection with that name
       def attribute(name, type, opts = {})
         name = name.to_s
 
@@ -58,7 +61,7 @@ module MyData
 
         attr_reader name
 
-        define_attr_setter name
+        define_attr_setter name, collection: !!opts[:collection]
       end
 
       private
@@ -73,7 +76,8 @@ module MyData
         @mappings[name] = {
           type: type,
           resource: resource,
-          collection: opts[:collection]
+          collection: opts[:collection],
+          collection_element_name: opts[:collection_element_name]
         }
       end
 

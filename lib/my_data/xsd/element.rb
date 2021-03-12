@@ -29,6 +29,16 @@ class MyData::Xsd::Element
     @collection = element.to_s.include? "maxOccurs"
   end
 
+  def collection_element_name
+    return @collection_element_name if defined? @collection_element_name
+
+    @collection_element_name =
+      if collection?
+        nested_element = element.at_xpath(".//xs:element")
+        nested_element ? nested_element.attributes["name"].value : nil
+      end
+  end
+
   def required?
     element.attributes["minOccurs"]&.value != "0"
   end
