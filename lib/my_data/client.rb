@@ -21,6 +21,12 @@ module MyData
       response_parser(response.body)
     end
 
+    def request_transmitted_docs(mark)
+      response = connection.get("RequestTransmittedDocs", mark: mark)
+
+      response.body
+    end
+
     private
 
     def response_parser(response)
