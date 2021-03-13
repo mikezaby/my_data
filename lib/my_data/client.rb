@@ -15,7 +15,7 @@ module MyData
       end
     end
 
-    def send_invoice(invoice_doc)
+    def send_invoices(invoice_doc)
       response = connection.post("SendInvoices", invoice_doc)
 
       response_parser(response.body)
