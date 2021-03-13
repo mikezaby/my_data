@@ -4,8 +4,10 @@ require "active_model"
 require "active_support/all"
 require "faraday"
 require "nokogiri"
+require "zeitwerk"
 
-require_relative "my_data/version"
+loader = Zeitwerk::Loader.for_gem
+loader.setup
 
 module MyData
   class Error < StandardError; end
@@ -13,12 +15,4 @@ module MyData
   def self.root
     File.expand_path '../..', __FILE__
   end
-
-  autoload :Client, "my_data/client"
-  autoload :Resource, "my_data/resource"
-  autoload :Resources, "my_data/resources"
-  autoload :TypeCaster, "my_data/type_caster"
-  autoload :XmlGenerator, "my_data/xml_generator"
-  autoload :XmlParser, "my_data/xml_parser"
-  autoload :Xsd, "my_data/xsd"
 end
