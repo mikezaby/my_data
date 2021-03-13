@@ -26,8 +26,9 @@ module MyData
     def response_parser(response)
       fixed_xml = response.sub(/^.+/, "").sub("</string>", "").strip
                           .gsub("&lt;", "<").gsub("&gt;", ">")
+      data = Hash.from_xml(fixed_xml)["ResponseDoc"].deep_transform_keys { |k| k.underscore }
 
-      Hash.from_xml(fixed_xml)
+      MyData::Resources::ResponseDoc.new(data)
     end
 
     def headers
