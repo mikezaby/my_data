@@ -14,7 +14,7 @@ module MyData
   class Error < StandardError; end
 
   def self.root
-    File.expand_path '../..', __FILE__
+    File.expand_path "..", __dir__
   end
 
   def self.reload!

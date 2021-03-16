@@ -39,6 +39,7 @@ module MyData
       def xsd_complex_type
         xsd_resource_attributes(name, :complex_type)
       end
+
       # @param name [String] the name of the attribute
       # @param type [Symbol] the type of the attribute (:string, :integer, etc)
       # @param opts [Hash] options for custom parsing

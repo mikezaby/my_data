@@ -5,7 +5,7 @@ class MyData::Xsd::Doc
 
   DEFAULT_ATTRS = {
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"
-  }
+  }.freeze
 
   def initialize(doc)
     @doc = doc
@@ -15,15 +15,13 @@ class MyData::Xsd::Doc
     return @target_namespace if defined? @target_namespace
 
     @target_namespace =
-      if target_namespace_value
-        doc.namespaces.find { |k,v| v == target_namespace_value }.first.split(":").last
-      end
+      (doc.namespaces.find { |_k, v| v == target_namespace_value }.first.split(":").last if target_namespace_value)
   end
 
   def attributes
     @attributes ||= DEFAULT_ATTRS
-      .merge(target_namespace_attributes)
-      .merge(namespace_attributes)
+                    .merge(target_namespace_attributes)
+                    .merge(namespace_attributes)
   end
 
   def elements
@@ -62,7 +60,7 @@ class MyData::Xsd::Doc
   end
 
   def target_namespace_attributes
-    return {} if !target_namespace_value
+    return {} unless target_namespace_value
 
     {
       "xmlns" => target_namespace_value,
@@ -72,8 +70,8 @@ class MyData::Xsd::Doc
 
   def namespace_attributes
     @namespace_attributes ||= doc
-      .namespaces
-      .reject { |k, _| k == "xmlns:xs" }
-      .reject { |_, v| v == target_namespace }
+                              .namespaces
+                              .reject { |k, _| k == "xmlns:xs" }
+                              .reject { |_, v| v == target_namespace }
   end
 end
