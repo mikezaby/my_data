@@ -11,8 +11,7 @@ module MyData
       :date,
       :time,
       :boolean,
-      :resource,
-      :ignore
+      :resource
     ].freeze
 
     def valid_type?(type)
