@@ -18,22 +18,27 @@ module MyData
     def send_invoices(invoice_doc)
       response = connection.post("SendInvoices", invoice_doc)
 
-      data = response_body(response)["response_doc"]
-
-      MyData::Resources::ResponseDoc.new(data)
+      parse_response(
+        response,
+        resource: MyData::Resources::Response,
+        root: "response_doc"
+      )
     end
 
     def request_transmitted_docs(mark)
       response = connection.get("RequestTransmittedDocs", mark: mark)
 
-      response_body(response)
+      parse_response(
+        response,
+        resource: MyData::Resources::Inv::RequestDoc,
+        root: "requested_doc"
+      )
     end
 
     private
 
-    def response_body(response)
-      body = response.body.sub(/^.+/, "").sub("</string>", "").strip.gsub("&lt;", "<").gsub("&gt;", ">")
-      Hash.from_xml(body).deep_transform_keys { |k| k.underscore }
+    def parse_response(response, resource:, root:)
+      MyData::XmlParser.xml_to_hash(xml: response.body, resource: resource, root: root)
     end
 
     def headers
