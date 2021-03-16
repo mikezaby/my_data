@@ -13,12 +13,20 @@ class MyData::Xsd::ComplexType
   end
 
   def elements
-    @elements ||= doc.xpath("xs:sequence/xs:element").map do |element|
+    @elements ||= extract_elements(doc).flatten.map do |element|
       MyData::Xsd::Element.new(element)
     end
   end
 
   def inspect
     "ComplexType: { name: #{name.to_json}, elements: #{elements} }"
+  end
+
+  private
+
+  def extract_elements(node)
+    return node if node.name == "element"
+
+    node.element_children.map { |child| extract_elements(child) }
   end
 end
