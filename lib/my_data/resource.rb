@@ -75,11 +75,6 @@ module MyData
         "#{name} #{format_attrs.join(", ")}"
       end
 
-      def from_xml(doc_or_string)
-        doc = doc_or_string.is_a?(String) ? Nokogiri::XML(doc_or_string).child : doc_or_string
-        new(parse_xml(doc))
-      end
-
       private
 
       def xsd_resource_attributes(name, type)
@@ -122,11 +117,6 @@ module MyData
 
           instance_variable_set("@#{name}", type_casted_value)
         end
-      end
-
-      def parse_xml(doc)
-        parser = MyData::XmlParser.new(doc, mappings, name)
-        parser.parse_xml
       end
     end
 
