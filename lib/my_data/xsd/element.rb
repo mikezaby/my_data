@@ -54,8 +54,8 @@ class MyData::Xsd::Element
   def camelize_type(extracted_type)
     return extracted_type if extracted_type.starts_with?("xs:")
 
-    ns, name = extracted_type.split(":")
+    ns, name = extracted_type.include?(":") ? extracted_type.split(":") : [nil, extracted_type]
 
-    [ns, name.camelize].join(":")
+    [ns, name.camelize].compact.join(":")
   end
 end
