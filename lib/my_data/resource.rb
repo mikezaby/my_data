@@ -154,15 +154,7 @@ module MyData
 
       return true if is_valid
 
-      resources.compact.each do |k, resource|
-        rs = resource.is_a?(Array) ? resource : [resource]
-
-        next if rs.all?(&:valid?)
-
-        rs.each do |r|
-          errors.add(k, :invalid_resource, message: r.errors.full_messages.join(", "))
-        end
-      end
+      add_nested_errors
 
       false
     end
@@ -188,6 +180,18 @@ module MyData
     def to_xml
       generator = MyData::XmlGenerator.new(self)
       generator.to_xml
+    end
+
+    private
+
+    def add_nested_errors
+      resources.compact.each do |k, resource|
+        rs = resource.is_a?(Array) ? resource : [resource]
+
+        rs.reject(&:valid?).each do |r|
+          errors.add(k, :invalid_resource, message: r.errors.full_messages.join(", "))
+        end
+      end
     end
   end
 end
