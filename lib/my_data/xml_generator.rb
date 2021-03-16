@@ -22,27 +22,39 @@ module MyData
 
     def to_xml_structure
       resource.attributes.each_with_object([]) do |(key, value), structure|
-        attr_mappings = mappings[key]
         next if value.nil?
 
-        if attr_mappings[:collection]
-          val = value.map { |v| attr_mappings[:resource] ? self.class.new(v, parent_namespace: namespace).to_xml_structure : v.to_s }
+        value = value_to_xml_structure(key, value)
 
-          if attr_mappings[:collection_element_name]
-            struct = val.map { |v| attr_structure(attr_mappings[:collection_element_name], v) }
-            structure.push(attr_structure(key, struct))
-          else
-            struct = val.map { |v| attr_structure(key, v) }
-            structure.push(*struct)
-          end
-        else
-          val = attr_mappings[:resource] ? self.class.new(value, parent_namespace: namespace).to_xml_structure : value.to_s
-          structure.push(attr_structure(key, val))
-        end
+        structure.push(*extract_attributes(key, value))
       end
     end
 
     private
+
+    def value_to_xml_structure(key, value)
+      is_resource = mappings[key][:resource].present?
+
+      transform = lambda do |v|
+        is_resource ? self.class.new(v, parent_namespace: namespace).to_xml_structure : v.to_s
+      end
+
+      value.is_a?(Array) ? value.map(&transform) : transform.call(value)
+    end
+
+    def extract_attributes(key, value)
+      collection, collection_element_name = mappings[key].values_at(:collection, :collection_element_name)
+
+      if !collection
+        [attr_structure(key, value)]
+      elsif collection_element_name
+        attrs = value.map { |v| attr_structure(collection_element_name, v) }
+
+        [attr_structure(key, attrs)]
+      else
+        value.map { |v| attr_structure(key, v) }
+      end
+    end
 
     def attr_structure(key, value)
       prefix = parent_namespace && namespace != parent_namespace ? "#{namespace}:" : ""
