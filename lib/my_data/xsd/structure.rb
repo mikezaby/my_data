@@ -16,20 +16,7 @@ module MyData::Xsd::Structure
 
     current_doc = type == :complex_type ? complex_types[key] : docs[name]
 
-    current_doc.elements.map do |element|
-      type = type_mapping(element.type)
-
-      [
-        element.name.underscore,
-        type,
-        {
-          collection: element.collection?,
-          collection_element_name: element.collection_element_name,
-          class_name: type == :resource ? classify(element.type) : nil,
-          required: element.required?
-        }
-      ]
-    end
+    current_doc.elements.map { |element| element_attributes(element) }
   end
 
   def docs
@@ -57,6 +44,21 @@ module MyData::Xsd::Structure
   end
 
   private
+
+  def element_attributes(element)
+    type = type_mapping(element.type)
+
+    [
+      element.name.underscore,
+      type,
+      {
+        collection: element.collection?,
+        collection_element_name: element.collection_element_name,
+        class_name: type == :resource ? classify(element.type) : nil,
+        required: element.required?
+      }
+    ]
+  end
 
   def classify(type)
     namespace, name = type.split(":").map(&:camelize)
