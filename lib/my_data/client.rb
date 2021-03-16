@@ -35,6 +35,18 @@ module MyData
       )
     end
 
+    def cancel_invoice(mark)
+      response = connection.post("CancelInvoice") do |req|
+        req.params["mark"] = mark
+      end
+
+      parse_response(
+        response,
+        resource: MyData::Resources::Response,
+        root: "response_doc"
+      )
+    end
+
     private
 
     def parse_response(response, resource:, root:)
