@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MyData::Resources::Inv::AddressType
+class MyData::Resources::Inv::ContinuationTokenType
   include MyData::Resource
 
   xsd_complex_type

@@ -3,6 +3,5 @@
 class MyData::Resources::ErrorType
   include MyData::Resource
 
-  attribute :message, :string
-  attribute :code, :integer
+  xsd_complex_type
 end

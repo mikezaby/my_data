@@ -3,5 +3,5 @@
 class MyData::Resources::Ecls::InvoicesExpensesClassificationDetailType
   include MyData::Resource
 
-  xsd_structure
+  xsd_complex_type
 end

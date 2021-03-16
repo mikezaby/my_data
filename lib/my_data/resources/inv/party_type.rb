@@ -3,5 +3,5 @@
 class MyData::Resources::Inv::PartyType
   include MyData::Resource
 
-  xsd_structure
+  xsd_complex_type
 end

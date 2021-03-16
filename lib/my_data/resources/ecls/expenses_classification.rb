@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MyData::Resources::Inv::InvoicesDoc
+class MyData::Resources::Ecls::ExpensesClassification
   include MyData::Resource
 
   xsd_doc

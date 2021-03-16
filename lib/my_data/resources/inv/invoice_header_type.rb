@@ -3,5 +3,5 @@
 class MyData::Resources::Inv::InvoiceHeaderType
   include MyData::Resource
 
-  xsd_structure
+  xsd_complex_type
 end

@@ -3,5 +3,5 @@
 class MyData::Resources::Icls::InvoiceIncomeClassificationType
   include MyData::Resource
 
-  xsd_structure
+  xsd_complex_type
 end
