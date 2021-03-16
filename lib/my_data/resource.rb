@@ -29,17 +29,16 @@ module MyData
         @container[:attributes] = opts
       end
 
-      def xsd_structure
-        MyData::Xsd::Structure.resource_attributes(name).each do |attrs|
-          e_name, type, opts = attrs
-          required = opts.delete :required
+      def xsd_doc
+        doc_name, doc = MyData::Xsd::Structure.doc(name)
+        container_tag(doc_name, doc.attributes)
 
-          attribute(e_name, type, opts)
-
-          validates_presence_of e_name if required
-        end
+        xsd_resource_attributes(name, :doc)
       end
 
+      def xsd_complex_type
+        xsd_resource_attributes(name, :complex_type)
+      end
       # @param name [String] the name of the attribute
       # @param type [Symbol] the type of the attribute (:string, :integer, etc)
       # @param opts [Hash] options for custom parsing
@@ -82,6 +81,17 @@ module MyData
       end
 
       private
+
+      def xsd_resource_attributes(name, type)
+        MyData::Xsd::Structure.resource_attributes(name, type).each do |attrs|
+          e_name, type, opts = attrs
+          required = opts.delete :required
+
+          attribute(e_name, type, opts)
+
+          validates_presence_of e_name if required
+        end
+      end
 
       def attr_mappings(name, type, opts)
         resource =

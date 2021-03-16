@@ -3,9 +3,10 @@
 class MyData::Xsd::Element
   attr_reader :element, :namespace
 
-  def initialize(element, namespace: nil)
+  def initialize(element, namespace: nil, force_collection: nil)
     @element = element
     @namespace = namespace
+    force_collection && @collection = force_collection
   end
 
   def name
@@ -14,13 +15,14 @@ class MyData::Xsd::Element
 
   def type
     @type =
-      if element.attributes["type"].present?
-        element.attributes["type"]
-      elsif element.xpath(".//xs:restriction[@base]").any?
-        element.xpath(".//xs:restriction[@base]").first.attributes["base"]
-      elsif element.xpath(".//xs:element[@type]").any?
-        element.xpath(".//xs:element[@type]").first.attributes["type"]
-      end.value
+      begin
+        extracted_type =
+          element.attributes["type"] ||
+          element.at_xpath(".//xs:element[@type]")&.attributes.try(:[], "type") ||
+          element.at_xpath(".//xs:restriction[@base]")&.attributes.try(:[], "base")
+
+        camelize_type(extracted_type.value)
+      end
   end
 
   def collection?
@@ -45,5 +47,15 @@ class MyData::Xsd::Element
 
   def inspect
     "Element: { name: #{name.to_json}, type: #{type.to_json}, collection: #{collection?} }"
+  end
+
+  private
+
+  def camelize_type(extracted_type)
+    return extracted_type if extracted_type.starts_with?("xs:")
+
+    ns, name = extracted_type.split(":")
+
+    [ns, name.camelize].join(":")
   end
 end

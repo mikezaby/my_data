@@ -5,10 +5,18 @@ module MyData::Xsd::Structure
 
   PATH = File.join(MyData.root, "lib/my_data/xsd/docs")
 
-  def resource_attributes(class_name)
-    namespace, name = class_name.split("::").last(2)
+  def doc(class_name)
+    name = class_name.split("::").last
+    [name, docs[name]]
+  end
 
-    complex_types["#{namespace.downcase}:#{name}"].elements.map do |element|
+  def resource_attributes(class_name, type)
+    namespace, name = class_name.split("::").last(2)
+    key = namespace == "Resources" ? name : [namespace.downcase, name].join(":")
+
+    current_doc = type == :complex_type ? complex_types[key] : docs[name]
+
+    current_doc.elements.map do |element|
       type = type_mapping(element.type)
 
       [
@@ -24,22 +32,26 @@ module MyData::Xsd::Structure
     end
   end
 
-  def complex_types
-    @complex_types ||= docs.each_with_object({}) do |(namespace, doc), types|
-      doc.xpath("//xs:schema/xs:complexType").each do |node|
-        type = MyData::Xsd::ComplexType.new(node, namespace: namespace)
+  def docs
+    @docs ||= Dir.glob("*.xsd", base: PATH).map do |file_name|
+      [file_name.sub(/-.+$/, "").camelize, MyData::Xsd::Doc.new(read_xsd(file_name))]
+    end.to_h
+  end
 
-        types["#{type.namespace}:#{type.name}"] = type
+  def complex_types
+    @complex_types ||= docs.values.each_with_object({}) do |document, types|
+      document.complex_types.each do |type|
+        name = [type.namespace, type.name].compact.join(":")
+        types[name] = type
       end
     end
   end
 
   def simple_types
-    @simple_types ||= docs.each_with_object({}) do |(namespace, doc), types|
-      doc.xpath("//xs:schema/xs:simpleType").each do |node|
-        type = MyData::Xsd::Element.new(node, namespace: namespace)
-
-        types["#{type.namespace}:#{type.name}"] = type
+    @simple_types ||= docs.values.each_with_object({}) do |document, types|
+      document.simple_types.each do |type|
+        name = [type.namespace, type.name].compact.join(":")
+        types[name] = type
       end
     end
   end
@@ -47,9 +59,9 @@ module MyData::Xsd::Structure
   private
 
   def classify(type)
-    namespace, name = type.split(":")
+    namespace, name = type.split(":").map(&:camelize)
 
-    "#{namespace.capitalize}::#{name}"
+    "#{namespace}::#{name}"
   end
 
   def type_mapping(type)
@@ -64,14 +76,6 @@ module MyData::Xsd::Structure
     else
       type.split(":").last.to_sym
     end
-  end
-
-  def docs
-    @docs ||= {
-      inv: read_xsd("InvoicesDoc-v1.0.2.xsd"),
-      icls: read_xsd("incomeClassification-v1.0.2.xsd"),
-      ecls: read_xsd("expensesClassification-v1.0.2.xsd")
-    }
   end
 
   def read_xsd(name)

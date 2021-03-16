@@ -3,13 +3,13 @@
 class MyData::Xsd::ComplexType
   attr_reader :doc, :namespace
 
-  def initialize(doc, namespace:)
+  def initialize(doc, namespace: nil)
     @doc = doc
     @namespace = namespace
   end
 
   def name
-    @name ||= doc.attributes["name"].value
+    @name ||= doc.attributes["name"].value.camelize
   end
 
   def elements
