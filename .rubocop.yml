@@ -30,3 +30,7 @@ Style/StringLiteralsInInterpolation:
 
 Layout/LineLength:
   Max: 120
+
+Lint/UselessAccessModifier:
+  ContextCreatingMethods:
+    - class_methods
