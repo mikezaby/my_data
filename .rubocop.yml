@@ -1,3 +1,10 @@
+require: 
+ - rubocop-rake
+ - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
 Metrics/ModuleLength:
   Max: 200
 
@@ -5,7 +12,7 @@ Metrics/MethodLength:
     Max: 15
 
 Metrics/BlockLength:
-  ExcludedMethods:
+  IgnoredMethods:
     - class_methods
 
 Style/Documentation:

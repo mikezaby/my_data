@@ -10,5 +10,7 @@ gem "rake", "~> 13.0"
 group :development, :test do
   gem "pry"
   gem "rspec", "~> 3.0"
-  gem "rubocop", "~> 0.80"
+  gem "rubocop", "~> 1.0"
+  gem "rubocop-rake", "~> 0.5"
+  gem "rubocop-rspec", "~> 2.0"
 end
