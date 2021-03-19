@@ -8,6 +8,7 @@ gemspec
 gem "rake", "~> 13.0"
 
 group :development, :test do
+  gem "guard-rspec", require: false
   gem "pry"
   gem "rspec", "~> 3.0"
   gem "rubocop", "~> 1.0"
