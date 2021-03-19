@@ -50,7 +50,7 @@ module MyData
     end
 
     def parse_response(response, resource:, root:)
-      MyData::XmlParser.xml_to_hash(xml: response.body, resource: resource, root: root)
+      MyData::ResponseParser.new(response, resource: resource, root: root)
     end
 
     def headers

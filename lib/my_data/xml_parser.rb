@@ -6,9 +6,10 @@ module MyData::XmlParser
   def xml_to_hash(xml:, resource:, root: nil)
     h = transofrm_xml_to_hash(fix_xml(xml))
     h = h[root] if root
-
     resource.new hash_mapping(h, resource)
   end
+
+  private
 
   def hash_mapping(hash, resource)
     flatten(hash, resource).each_with_object({}) do |(key, value), h|
@@ -20,19 +21,20 @@ module MyData::XmlParser
         if value.is_a?(Array)
           value.map { |v| hash_mapping(v, mappings[:resource]) }
         else
-          hash_mapping(value, mappings[:resource])
+          hash_map = hash_mapping(value, mappings[:resource])
+          mappings[:collection] ? [hash_map] : hash_map
         end
     end
   end
 
-  private
-
   def fix_xml(xml)
-    xml.sub(/^.+/, "").sub("</string>", "").strip.gsub("&lt;", "<").gsub("&gt;", ">")
+    xml.strip.gsub("&lt;", "<").gsub("&gt;", ">")
   end
 
   def transofrm_xml_to_hash(xml)
-    Hash.from_xml(xml).deep_transform_keys(&:underscore)
+    Hash
+      .from_xml(xml)
+      .deep_transform_keys(&:underscore)["string"]
   end
 
   def flatten(hash, resource)
