@@ -9,12 +9,6 @@ module MyData
       @subscription_key = subscription_key
     end
 
-    def connection
-      @connection ||= Faraday.new(BASE_URL) do |conn|
-        conn.headers = headers
-      end
-    end
-
     def send_invoices(invoice_doc)
       response = connection.post("SendInvoices", invoice_doc)
 
@@ -48,6 +42,12 @@ module MyData
     end
 
     private
+
+    def connection
+      @connection ||= Faraday.new(BASE_URL) do |conn|
+        conn.headers = headers
+      end
+    end
 
     def parse_response(response, resource:, root:)
       MyData::XmlParser.xml_to_hash(xml: response.body, resource: resource, root: root)
