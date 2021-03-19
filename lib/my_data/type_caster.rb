@@ -27,7 +27,7 @@ module MyData
     private
 
     def type_cast_string(value)
-      value.to_s.strip
+      value ? value.to_s.strip : nil
     end
 
     def type_cast_integer(value)
@@ -47,7 +47,9 @@ module MyData
     end
 
     def type_cast_boolean(value)
-      value.downcase == "true"
+      return value if value.nil?
+
+      value.is_a?(String) ? value.downcase == "true" : value == true
     end
 
     def type_cast_resource(value, resource)
