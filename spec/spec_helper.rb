@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "factory_bot"
 require "pry"
 require "vcr"
 require "my_data"
@@ -22,5 +23,11 @@ RSpec.configure do |config|
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
+  end
+
+  config.include FactoryBot::Syntax::Methods
+
+  config.before(:suite) do
+    FactoryBot.find_definitions
   end
 end
