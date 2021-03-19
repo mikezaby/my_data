@@ -142,6 +142,8 @@ module MyData
     end
 
     def attributes=(attrs)
+      attrs = attrs.respond_to?(:attributes) ? attrs.attributes : attrs
+
       attrs.each do |key, value|
         next unless attribute_names.include?(key.to_s)
 
