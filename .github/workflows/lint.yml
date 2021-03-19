@@ -33,5 +33,5 @@ jobs:
           rubocop_command_prefix: bundle exec
 
       - name: Run specs
-        run: bundle exec rake
+        run: bundle exec rake spec
 
