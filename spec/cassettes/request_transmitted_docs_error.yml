@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mydata-dev.azure-api.net/RequestTransmittedDocs?mark=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+      Aade-User-Id:
+      - johndoe
+      Ocp-Apim-Subscription-Key:
+      - c9b79ff1841fb5cfecc66e1ea5a29b4d
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 401
+      message: Access Denied
+    headers:
+      Content-Length:
+      - '143'
+      Content-Type:
+      - application/json
+      Www-Authenticate:
+      - AzureApiManagementKey realm="https://mydata-dev.azure-api.net/",name="Ocp-Apim-Subscription-Key",type="header"
+      Date:
+      - Thu, 18 Mar 2021 10:12:52 GMT
+    body:
+      encoding: UTF-8
+      string: '{ "statusCode": 401, "message": "Access denied due to invalid subscription
+        key. Make sure to provide a valid key for an active subscription." }'
+  recorded_at: Thu, 18 Mar 2021 10:12:52 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,523 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://mydata-dev.azure-api.net/RequestTransmittedDocs?mark=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+      Aade-User-Id:
+      - johndoe
+      Ocp-Apim-Subscription-Key:
+      - c9b79ff1841fb5cfecc66e1ea5a29b4d
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '46190'
+      Content-Type:
+      - application/xml; charset=utf-8
+      Request-Context:
+      - appId=cid-v1:3844603b-d1b8-4cbd-803e-3f599b48a1b2
+      Date:
+      - Thu, 18 Mar 2021 10:37:04 GMT
+    body:
+      encoding: UTF-8
+      string: "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">&lt;?xml
+        version=\"1.0\" encoding=\"utf-8\"?&gt;\r\n&lt;RequestedDoc xmlns:icls=\"https://www.aade.gr/myDATA/incomeClassificaton/v1.0\"
+        xmlns:ecls=\"https://www.aade.gr/myDATA/expensesClassificaton/v1.0\" xmlns=\"http://www.aade.gr/myDATA/invoice/v1.0\"&gt;\r\n
+        \ &lt;invoicesDoc&gt;\r\n    &lt;invoice&gt;\r\n      &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831896759&lt;/mark&gt;\r\n      &lt;cancelledByMark&gt;400001831984679&lt;/cancelledByMark&gt;\r\n
+        \     &lt;issuer&gt;\r\n        &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n
+        \       &lt;country&gt;GR&lt;/country&gt;\r\n        &lt;branch&gt;0&lt;/branch&gt;\r\n
+        \     &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n        &lt;series&gt;A&lt;/series&gt;\r\n
+        \       &lt;aa&gt;1&lt;/aa&gt;\r\n        &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n
+        \       &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n        &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831924165&lt;/mark&gt;\r\n      &lt;cancelledByMark&gt;400001831984718&lt;/cancelledByMark&gt;\r\n
+        \     &lt;issuer&gt;\r\n        &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n
+        \       &lt;country&gt;GR&lt;/country&gt;\r\n        &lt;branch&gt;0&lt;/branch&gt;\r\n
+        \     &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n        &lt;series&gt;A&lt;/series&gt;\r\n
+        \       &lt;aa&gt;1&lt;/aa&gt;\r\n        &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n
+        \       &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n        &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831924171&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831925879&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930012&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930020&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930033&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930035&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930040&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930049&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930200&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930202&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930205&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831930206&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831980951&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831980956&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831980958&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831984383&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n    &lt;invoice&gt;\r\n
+        \     &lt;uid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/uid&gt;\r\n
+        \     &lt;mark&gt;400001831987381&lt;/mark&gt;\r\n      &lt;issuer&gt;\r\n
+        \       &lt;vatNumber&gt;111111111&lt;/vatNumber&gt;\r\n        &lt;country&gt;GR&lt;/country&gt;\r\n
+        \       &lt;branch&gt;0&lt;/branch&gt;\r\n      &lt;/issuer&gt;\r\n      &lt;invoiceHeader&gt;\r\n
+        \       &lt;series&gt;A&lt;/series&gt;\r\n        &lt;aa&gt;1&lt;/aa&gt;\r\n
+        \       &lt;issueDate&gt;2021-02-21&lt;/issueDate&gt;\r\n        &lt;invoiceType&gt;11.2&lt;/invoiceType&gt;\r\n
+        \       &lt;vatPaymentSuspension&gt;false&lt;/vatPaymentSuspension&gt;\r\n
+        \       &lt;currency&gt;EUR&lt;/currency&gt;\r\n      &lt;/invoiceHeader&gt;\r\n
+        \     &lt;paymentMethods&gt;\r\n        &lt;paymentMethodDetails&gt;\r\n          &lt;type&gt;3&lt;/type&gt;\r\n
+        \         &lt;amount&gt;124.0&lt;/amount&gt;\r\n        &lt;/paymentMethodDetails&gt;\r\n
+        \     &lt;/paymentMethods&gt;\r\n      &lt;invoiceDetails&gt;\r\n        &lt;lineNumber&gt;1&lt;/lineNumber&gt;\r\n
+        \       &lt;netValue&gt;100&lt;/netValue&gt;\r\n        &lt;vatCategory&gt;1&lt;/vatCategory&gt;\r\n
+        \       &lt;vatAmount&gt;24.0&lt;/vatAmount&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceDetails&gt;\r\n      &lt;invoiceSummary&gt;\r\n        &lt;totalNetValue&gt;100&lt;/totalNetValue&gt;\r\n
+        \       &lt;totalVatAmount&gt;24.0&lt;/totalVatAmount&gt;\r\n        &lt;totalWithheldAmount&gt;0&lt;/totalWithheldAmount&gt;\r\n
+        \       &lt;totalFeesAmount&gt;0&lt;/totalFeesAmount&gt;\r\n        &lt;totalStampDutyAmount&gt;0&lt;/totalStampDutyAmount&gt;\r\n
+        \       &lt;totalOtherTaxesAmount&gt;0&lt;/totalOtherTaxesAmount&gt;\r\n        &lt;totalDeductionsAmount&gt;0&lt;/totalDeductionsAmount&gt;\r\n
+        \       &lt;totalGrossValue&gt;124.0&lt;/totalGrossValue&gt;\r\n        &lt;incomeClassification&gt;\r\n
+        \         &lt;icls:classificationType&gt;E3_561_003&lt;/icls:classificationType&gt;\r\n
+        \         &lt;icls:classificationCategory&gt;category1_3&lt;/icls:classificationCategory&gt;\r\n
+        \         &lt;icls:amount&gt;100.0&lt;/icls:amount&gt;\r\n        &lt;/incomeClassification&gt;\r\n
+        \     &lt;/invoiceSummary&gt;\r\n    &lt;/invoice&gt;\r\n  &lt;/invoicesDoc&gt;\r\n
+        \ &lt;cancelledInvoicesDoc&gt;\r\n    &lt;cancelledInvoice&gt;\r\n      &lt;invoiceMark&gt;400001831896759&lt;/invoiceMark&gt;\r\n
+        \     &lt;cancellationMark&gt;400001831984679&lt;/cancellationMark&gt;\r\n
+        \     &lt;cancellationDate&gt;2021-03-16T18:56:19Z&lt;/cancellationDate&gt;\r\n
+        \   &lt;/cancelledInvoice&gt;\r\n    &lt;cancelledInvoice&gt;\r\n      &lt;invoiceMark&gt;400001831924165&lt;/invoiceMark&gt;\r\n
+        \     &lt;cancellationMark&gt;400001831984718&lt;/cancellationMark&gt;\r\n
+        \     &lt;cancellationDate&gt;2021-03-16T18:58:01Z&lt;/cancellationDate&gt;\r\n
+        \   &lt;/cancelledInvoice&gt;\r\n  &lt;/cancelledInvoicesDoc&gt;\r\n&lt;/RequestedDoc&gt;</string>"
+  recorded_at: Thu, 18 Mar 2021 10:37:04 GMT
+recorded_with: VCR 6.0.0

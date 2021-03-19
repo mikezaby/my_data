@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://mydata-dev.azure-api.net/CancelInvoice?mark=400001831924171
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+      Aade-User-Id:
+      - johndoe
+      Ocp-Apim-Subscription-Key:
+      - c9b79ff1841fb5cfecc66e1ea5a29b4d
+      User-Agent:
+      - Faraday v1.3.0
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '424'
+      Content-Type:
+      - application/xml; charset=utf-8
+      Request-Context:
+      - appId=cid-v1:3844603b-d1b8-4cbd-803e-3f599b48a1b2
+      Date:
+      - Fri, 19 Mar 2021 13:45:42 GMT
+    body:
+      encoding: UTF-8
+      string: "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">&lt;?xml
+        version=\"1.0\" encoding=\"utf-8\"?&gt;\r\n&lt;ResponseDoc xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+        xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"&gt;\r\n  &lt;response&gt;\r\n
+        \   &lt;cancellationMark&gt;400001832031421&lt;/cancellationMark&gt;\r\n    &lt;statusCode&gt;Success&lt;/statusCode&gt;\r\n
+        \ &lt;/response&gt;\r\n&lt;/ResponseDoc&gt;</string>"
+  recorded_at: Fri, 19 Mar 2021 13:45:42 GMT
+recorded_with: VCR 6.0.0
