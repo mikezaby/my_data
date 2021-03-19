@@ -22,7 +22,7 @@ module MyData
 
     def to_xml_structure
       resource.attributes.each_with_object([]) do |(key, value), structure|
-        next if value.nil?
+        next if value.nil? || (value.respond_to?(:empty?) && value.empty?)
 
         value = value_to_xml_structure(key, value)
 
