@@ -117,8 +117,7 @@ module MyData
 
           type_casted_value =
             if collection
-              values = value.is_a?(Array) ? value : [value].compact
-              values.map { |val| MyData::TypeCaster.cast(value: val, type: type, resource: resource) }
+              value.map { |val| MyData::TypeCaster.cast(value: val, type: type, resource: resource) }
             else
               MyData::TypeCaster.cast(value: value, type: type, resource: resource)
             end
