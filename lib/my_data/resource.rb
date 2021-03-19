@@ -59,9 +59,8 @@ module MyData
         @attributes.push(name)
         attr_mappings(name, type, opts)
 
-        attr_reader name
-
-        define_attr_setter name, collection: !!opts[:collection]
+        define_attr_getter name, collection: opts[:collection]
+        define_attr_setter name, collection: opts[:collection]
       end
 
       def inspect
@@ -102,6 +101,14 @@ module MyData
           collection: opts[:collection],
           collection_element_name: opts[:collection_element_name]
         }
+      end
+
+      def define_attr_getter(name, collection: false)
+        define_method name do
+          value = instance_variable_get("@#{name}")
+
+          collection && value.nil? ? [] : value
+        end
       end
 
       def define_attr_setter(name, collection: false)
