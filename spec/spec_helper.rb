@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require "my_data"
+require "pry"
 require "vcr"
+require "my_data"
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/cassettes"
