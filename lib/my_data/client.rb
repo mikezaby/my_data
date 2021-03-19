@@ -9,8 +9,8 @@ module MyData
       @subscription_key = subscription_key
     end
 
-    def send_invoices(invoice_doc)
-      response = connection.post("SendInvoices", invoice_doc)
+    def send_invoices(doc:)
+      response = connection.post("SendInvoices", doc)
 
       parse_response(
         response,
@@ -19,7 +19,7 @@ module MyData
       )
     end
 
-    def request_transmitted_docs(mark)
+    def request_transmitted_docs(mark:)
       response = connection.get("RequestTransmittedDocs", mark: mark)
 
       parse_response(
@@ -29,7 +29,7 @@ module MyData
       )
     end
 
-    def cancel_invoice(mark)
+    def cancel_invoice(mark:)
       response = connection.post("CancelInvoice") do |req|
         req.params["mark"] = mark
       end
