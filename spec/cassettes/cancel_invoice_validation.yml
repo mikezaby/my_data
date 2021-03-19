@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://mydata-dev.azure-api.net/CancelInvoice?mark=101
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/xml
+      Accept:
+      - application/xml
+      Aade-User-Id:
+      - johndoe
+      Ocp-Apim-Subscription-Key:
+      - c9b79ff1841fb5cfecc66e1ea5a29b4d
+      User-Agent:
+      - Faraday v1.3.0
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '585'
+      Content-Type:
+      - application/xml; charset=utf-8
+      Request-Context:
+      - appId=cid-v1:3844603b-d1b8-4cbd-803e-3f599b48a1b2
+      Date:
+      - Fri, 19 Mar 2021 12:17:26 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PHN0cmluZyB4bWxucz0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS8yMDAzLzEwL1NlcmlhbGl6YXRpb24vIj4mbHQ7P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJ1dGYtOCI/Jmd0Ow0KJmx0O1Jlc3BvbnNlRG9jIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiJmd0Ow0KICAmbHQ7cmVzcG9uc2UmZ3Q7DQogICAgJmx0O3N0YXR1c0NvZGUmZ3Q7VmFsaWRhdGlvbkVycm9yJmx0Oy9zdGF0dXNDb2RlJmd0Ow0KICAgICZsdDtlcnJvcnMmZ3Q7DQogICAgICAmbHQ7ZXJyb3ImZ3Q7DQogICAgICAgICZsdDttZXNzYWdlJmd0O0ludm9pY2Ugd2l0aCDOnM6RzqHOmiAxMDEgbm90IGZvdW5kIGZvciBWQVQgbnVtYmVyIDEzNjk3NTM5OSZsdDsvbWVzc2FnZSZndDsNCiAgICAgICAgJmx0O2NvZGUmZ3Q7MzAxJmx0Oy9jb2RlJmd0Ow0KICAgICAgJmx0Oy9lcnJvciZndDsNCiAgICAmbHQ7L2Vycm9ycyZndDsNCiAgJmx0Oy9yZXNwb25zZSZndDsNCiZsdDsvUmVzcG9uc2VEb2MmZ3Q7PC9zdHJpbmc+
+  recorded_at: Fri, 19 Mar 2021 12:17:26 GMT
+recorded_with: VCR 6.0.0
