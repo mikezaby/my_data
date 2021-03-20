@@ -28,7 +28,7 @@ class MyData::ResponseParser
 
     @response =
       if original_response.status == 200
-        MyData::XmlParser.xml_to_hash(xml: original_response.body, resource: resource, root: root)
+        MyData::XmlParser.xml_to_resource(xml: original_response.body, resource: resource, root: root)
       end
   end
 

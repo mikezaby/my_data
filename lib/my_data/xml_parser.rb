@@ -3,9 +3,10 @@
 module MyData::XmlParser
   extend self
 
-  def xml_to_hash(xml:, resource:, root: nil)
+  def xml_to_resource(xml:, resource:, root: nil)
     h = transofrm_xml_to_hash(fix_xml(xml))
     h = h[root] if root
+
     resource.new hash_mapping(h, resource)
   end
 
