@@ -16,15 +16,18 @@ module MyData::XmlParser
     flatten(hash, resource).each_with_object({}) do |(key, value), h|
       mappings = resource.mappings[key]
 
-      next h[key] = value unless mappings[:resource]
+      h[key] = value_mapping(value, mappings)
+    end
+  end
 
-      h[key] =
-        if value.is_a?(Array)
-          value.map { |v| hash_mapping(v, mappings[:resource]) }
-        else
-          hash_map = hash_mapping(value, mappings[:resource])
-          mappings[:collection] ? [hash_map] : hash_map
-        end
+  def value_mapping(value, mappings)
+    return value if mappings[:resource].nil?
+
+    if mappings[:collection]
+      value = value.is_a?(Array) ? value : [value]
+      value.map { |v| hash_mapping(v, mappings[:resource]) }
+    else
+      hash_mapping(value, mappings[:resource])
     end
   end
 
