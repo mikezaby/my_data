@@ -8,7 +8,7 @@ Metrics/ModuleLength:
   Max: 200
 
 Metrics/MethodLength:
-    Max: 15
+  Max: 15
 
 Metrics/BlockLength:
   IgnoredMethods:
