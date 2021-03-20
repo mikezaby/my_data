@@ -1,10 +1,32 @@
 # frozen_string_literal: true
 
 RSpec.describe MyData::Client do
-  subject(:client) { described_class.new(user_id: "johndoe", subscription_key: "c9b79ff1841fb5cfecc66e1ea5a29b4d") }
+  subject(:client) do
+    described_class.new(
+      user_id: "johndoe",
+      subscription_key: "c9b79ff1841fb5cfecc66e1ea5a29b4d",
+      environment: environment
+    )
+  end
+
+  let(:environment) { :sandbox }
 
   describe "#request_transmitted_docs" do
     let(:response_parser) { client.request_transmitted_docs(mark: 1) }
+
+    context "when environment is sandbox", vcr: { cassette_name: "request_transmitted_docs_success" } do
+      it "reqests to sandbox" do
+        expect(response_parser).to be_success
+      end
+    end
+
+    context "when environment is production", vcr: { cassette_name: "request_production_transmitted_docs_success" } do
+      let(:environment) { :production }
+
+      it "reqests to production" do
+        expect(response_parser).to be_success
+      end
+    end
 
     context "when request is successful", vcr: { cassette_name: "request_transmitted_docs_success" } do
       it "returns a MyData::ResponseParser" do

@@ -33,7 +33,12 @@ irb> MyData::Resources::Inv::PartyType
 
 #### Initialize client
 ```ruby
-client = MyData::Client.new(user_id: "johndoe", subscription_key: "c9b79ff1841fb5cfecc66e1ea5a29b4d")
+# You could set environment to :sandbox or :production
+client = MyData::Client.new(
+  user_id: "johndoe", 
+  subscription_key: "c9b79ff1841fb5cfecc66e1ea5a29b4d"
+  environment: :sandbox
+)
 ```
 
 #### Send invoices

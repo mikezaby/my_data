@@ -2,11 +2,15 @@
 
 module MyData
   class Client
-    BASE_URL = "https://mydata-dev.azure-api.net"
+    BASE_URL = {
+      sandbox: "https://mydata-dev.azure-api.net",
+      production: "https://mydatapi.aade.gr/myDATA/"
+    }.freeze
 
-    def initialize(user_id:, subscription_key:)
+    def initialize(user_id:, subscription_key:, environment:)
       @user_id = user_id
       @subscription_key = subscription_key
+      @environment = environment
     end
 
     def send_invoices(doc:)
@@ -44,7 +48,7 @@ module MyData
     private
 
     def connection
-      @connection ||= Faraday.new(BASE_URL) do |conn|
+      @connection ||= Faraday.new(BASE_URL[@environment]) do |conn|
         conn.headers = headers
       end
     end
