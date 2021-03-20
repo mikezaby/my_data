@@ -31,12 +31,12 @@ irb> MyData::Resources::Inv::PartyType
 
 ## Usage
 
-##### Initialize client
+#### Initialize client
 ```ruby
 client = MyData::Client.new(user_id: "johndoe", subscription_key: "c9b79ff1841fb5cfecc66e1ea5a29b4d")
 ```
 
-##### Send invoices
+#### Send invoices
 ```ruby
 # send invoices
 invoice_data = {
@@ -67,12 +67,12 @@ invoices_doc = MyData::Resources::Inv::InvoicesDoc.new(invoice: [invoice_data])
 client.send_invoices(doc: invoices_doc.to_xml)
 ```
 
-##### Request transmitted docs
+#### Request transmitted docs
 ```ruby
 client.request_transmitted_docs(mark: 1)
 ```
 
-##### Cancel Invoice
+#### Cancel Invoice
   ```ruby
 client.cancel_invoice(mark: 400001831924171)
   ```
