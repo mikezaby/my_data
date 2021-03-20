@@ -36,7 +36,7 @@ irb> MyData::Resources::Inv::PartyType
 # You could set environment to :sandbox or :production
 client = MyData::Client.new(
   user_id: "johndoe", 
-  subscription_key: "c9b79ff1841fb5cfecc66e1ea5a29b4d"
+  subscription_key: "c9b79ff1841fb5cfecc66e1ea5a29b4d",
   environment: :sandbox
 )
 ```
