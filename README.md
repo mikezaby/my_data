@@ -23,7 +23,7 @@ There are all the [resources](https://github.com/mikezaby/my_data/tree/master/li
 that are specified by the given
 [xsd files](https://www.aade.gr/sites/default/files/2020-11/version%20v1.0.2%20XSDs.zip) from AADE.
 
-e.x.
+e.g.
 ```irb
 irb> MyData::Resources::Inv::PartyType
 => MyData::Resources::Inv::PartyType vat_number: string, country: string, branch: integer, name: string, address: MyData::Resources::Inv::AddressType
