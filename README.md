@@ -38,7 +38,6 @@ client = MyData::Client.new(user_id: "johndoe", subscription_key: "c9b79ff1841fb
 
 #### Send invoices
 ```ruby
-# send invoices
 invoice_data = {
   issuer: { vat_number: "111111111", country: "GR", branch: 0 },
   invoice_header: { series: "A", aa: "1", issue_date: "2021-02-21", invoice_type: "11.2", currency: "EUR" },
