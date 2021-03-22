@@ -23,13 +23,21 @@ module MyData
       )
     end
 
-    def request_transmitted_docs(mark:)
-      response = connection.get("RequestTransmittedDocs", mark: mark)
+    def request_docs(mark:, next_partition_key: nil, next_row_key: nil)
+      base_request_docs(
+        endpoint: "RequestDocs",
+        mark: mark,
+        next_partition_key: next_partition_key,
+        next_row_key: next_row_key
+      )
+    end
 
-      parse_response(
-        response,
-        resource: MyData::Resources::Inv::RequestDoc,
-        root: "requested_doc"
+    def request_transmitted_docs(mark:, next_partition_key: nil, next_row_key: nil)
+      base_request_docs(
+        endpoint: "RequestTransmittedDocs",
+        mark: mark,
+        next_partition_key: next_partition_key,
+        next_row_key: next_row_key
       )
     end
 
@@ -46,6 +54,22 @@ module MyData
     end
 
     private
+
+    def base_request_docs(endpoint:, mark:, next_partition_key:, next_row_key:)
+      params = { mark: mark }
+
+      if next_partition_key && next_row_key
+        params.merge!(nextPartitionKey: next_partition_key, nextRowKey: next_row_key)
+      end
+
+      response = connection.get(endpoint, params)
+
+      parse_response(
+        response,
+        resource: MyData::Resources::Inv::RequestDoc,
+        root: "requested_doc"
+      )
+    end
 
     def connection
       @connection ||= Faraday.new(BASE_URL[@environment]) do |conn|

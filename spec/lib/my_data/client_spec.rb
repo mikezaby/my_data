@@ -65,6 +65,46 @@ RSpec.describe MyData::Client do
     end
   end
 
+  describe "#request_docs" do
+    let(:response_parser) { client.request_docs(mark: 1) }
+
+    context "when request is successful", vcr: { cassette_name: "request_docs_success" } do
+      it "returns a MyData::ResponseParser" do
+        expect(response_parser).to be_a(MyData::ResponseParser)
+      end
+
+      it "has response that is succeded" do
+        expect(response_parser).to be_success
+      end
+
+      it "has empty errors" do
+        expect(response_parser.errors).to be_empty
+      end
+
+      it "has response that is a MyData::Resources::Inv::RequestDoc" do
+        expect(response_parser.response).to be_a(MyData::Resources::Inv::RequestDoc)
+      end
+    end
+
+    context "when request is get access denied", vcr: { cassette_name: "request_docs_error" } do
+      it "returns a ResponseParser" do
+        expect(response_parser).to be_a(MyData::ResponseParser)
+      end
+
+      it "has  response that isn't succeded" do
+        expect(response_parser).not_to be_success
+      end
+
+      it "has errors" do
+        expect(response_parser.errors).to be_present
+      end
+
+      it "has nil response" do
+        expect(response_parser.response).to be_nil
+      end
+    end
+  end
+
   describe "#send_invoices" do
     let(:response_parser) { client.send_invoices(doc: doc) }
     let(:doc) { "" }
