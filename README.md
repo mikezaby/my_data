@@ -1,5 +1,8 @@
 # AADE MyData ruby client
 
+[![Gem Version](https://badge.fury.io/rb/my_data.svg)](https://rubygems.org/gems/my_data)
+[![GitHub Actions CI](https://github.com/mikezaby/my_data/actions/workflows/ci.yml/badge.svg)](https://github.com/mikezaby/my_data/actions/workflows/ci.yml)
+
 A Ruby client for [AADE myDATA](https://www.aade.gr/mydata) API
 
 ## Installation
