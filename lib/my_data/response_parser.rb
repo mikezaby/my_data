@@ -7,6 +7,18 @@ class MyData::ResponseParser
     @root = root
   end
 
+  def status
+    if success?
+      :success
+    elsif original_response.status == 401
+      :unauthorized
+    elsif original_response.status == 400
+      :bad_request
+    else
+      :validation_error
+    end
+  end
+
   def success?
     original_response.status == 200 &&
       (!response_type? || response.response.all? { |r| r.status_code == "Success" })
