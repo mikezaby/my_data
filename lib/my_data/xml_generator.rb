@@ -32,11 +32,24 @@ module MyData
 
     private
 
+    def value_to_string(key, value)
+      case mappings[key][:type]
+      when :date
+        value.strftime("%Y-%m-%d")
+      else
+        value.to_s
+      end
+    end
+
     def value_to_xml_structure(key, value)
       is_resource = mappings[key][:resource].present?
 
       transform = lambda do |v|
-        is_resource ? self.class.new(v, parent_namespace: namespace).to_xml_structure : v.to_s
+        if is_resource
+          self.class.new(v, parent_namespace: namespace).to_xml_structure
+        else
+          value_to_string(key, v)
+        end
       end
 
       value.is_a?(Array) ? value.map(&transform) : transform.call(value)
