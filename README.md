@@ -2,6 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/my_data.svg)](https://rubygems.org/gems/my_data)
 [![GitHub Actions CI](https://github.com/mikezaby/my_data/actions/workflows/ci.yml/badge.svg)](https://github.com/mikezaby/my_data/actions/workflows/ci.yml)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7a96aa72dce8a761467d/maintainability)](https://codeclimate.com/github/mikezaby/my_data/maintainability)
 
 A Ruby client for [AADE myDATA](https://www.aade.gr/mydata) API
 
