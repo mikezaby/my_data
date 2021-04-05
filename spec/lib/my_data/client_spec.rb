@@ -41,6 +41,10 @@ RSpec.describe MyData::Client do
         expect(response_parser.errors).to be_empty
       end
 
+      it "has responded_at" do
+        expect(response_parser.responded_at).to eq(Time.parse("Thu, 18 Mar 2021 10:37:04 GMT"))
+      end
+
       it "has response that is a MyData::Resources::Inv::RequestDoc" do
         expect(response_parser.response).to be_a(MyData::Resources::Inv::RequestDoc)
       end
@@ -57,6 +61,10 @@ RSpec.describe MyData::Client do
 
       it "has errors" do
         expect(response_parser.errors).to be_present
+      end
+
+      it "has responded_at" do
+        expect(response_parser.responded_at).to eq(Time.parse("Thu, 18 Mar 2021 10:12:52 GMT"))
       end
 
       it "has nil response" do

@@ -24,6 +24,10 @@ class MyData::ResponseParser
       (!response_type? || response.response.all? { |r| r.status_code == "Success" })
   end
 
+  def responded_at
+    @responded_at ||= Time.parse(original_response.headers["date"])
+  end
+
   def errors
     @errors ||=
       if success?
