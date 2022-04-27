@@ -55,7 +55,7 @@ RSpec.describe MyData::Client do
         expect(response_parser).to be_a(MyData::ResponseParser)
       end
 
-      it "has  response that isn't succeded" do
+      it "has response that isn't succeded" do
         expect(response_parser).not_to be_success
       end
 
@@ -99,7 +99,7 @@ RSpec.describe MyData::Client do
         expect(response_parser).to be_a(MyData::ResponseParser)
       end
 
-      it "has  response that isn't succeded" do
+      it "has response that isn't succeded" do
         expect(response_parser).not_to be_success
       end
 
@@ -136,7 +136,7 @@ RSpec.describe MyData::Client do
     end
 
     context "when request is successful", vcr: { cassette_name: "send_invoices_success", match_requests_on: [:body] } do
-      let(:doc) { FactoryBot.build(:invoices_doc).to_xml }
+      let(:doc) { build(:invoices_doc).to_xml }
 
       it "has response that is succeded" do
         expect(response_parser).to be_success
@@ -194,7 +194,7 @@ RSpec.describe MyData::Client do
         expect(response_parser).to be_a(MyData::ResponseParser)
       end
 
-      it "has  response that isn't succeded" do
+      it "has response that isn't succeded" do
         expect(response_parser).not_to be_success
       end
 

@@ -24,7 +24,7 @@ module MyData::XmlParser
     return value if mappings[:resource].nil?
 
     if mappings[:collection]
-      value = value.is_a?(Array) ? value : [value]
+      value = [value] unless value.is_a?(Array)
       value.map { |v| hash_mapping(v, mappings[:resource]) }
     else
       hash_mapping(value, mappings[:resource])
