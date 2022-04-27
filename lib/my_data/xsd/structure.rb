@@ -61,9 +61,7 @@ module MyData::Xsd::Structure
   end
 
   def classify(type)
-    namespace, name = type.split(":").map(&:camelize)
-
-    "#{namespace}::#{name}"
+    type.split(":").map(&:camelize).join("::")
   end
 
   def type_mapping(type)
