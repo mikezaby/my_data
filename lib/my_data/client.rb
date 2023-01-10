@@ -3,7 +3,7 @@
 module MyData
   class Client
     BASE_URL = {
-      sandbox: "https://mydata-dev.azure-api.net",
+      sandbox: "https://mydataapidev.aade.gr",
       production: "https://mydatapi.aade.gr/myDATA/"
     }.freeze
 
