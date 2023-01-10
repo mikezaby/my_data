@@ -72,7 +72,7 @@ module MyData
     end
 
     def connection
-      @connection ||= Faraday.new(BASE_URL[@environment]) do |conn|
+      @connection ||= Faraday.new(BASE_URL[@environment], ssl: { verify: false }) do |conn|
         conn.headers = headers
       end
     end
