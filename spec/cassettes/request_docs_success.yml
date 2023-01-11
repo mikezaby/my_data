@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://mydata-dev.azure-api.net/RequestDocs?mark=1
+    uri: https://mydataapidev.aade.gr/RequestDocs?mark=1
     body:
       encoding: US-ASCII
       string: ''

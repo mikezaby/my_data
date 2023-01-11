@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://mydata-dev.azure-api.net/CancelInvoice?mark=101
+    uri: https://mydataapidev.aade.gr/CancelInvoice?mark=101
     body:
       encoding: UTF-8
       string: ''
