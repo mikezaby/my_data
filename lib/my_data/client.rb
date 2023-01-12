@@ -3,7 +3,7 @@
 module MyData
   class Client
     BASE_URL = {
-      sandbox: "https://mydata-dev.azure-api.net",
+      sandbox: "https://mydataapidev.aade.gr",
       production: "https://mydatapi.aade.gr/myDATA/"
     }.freeze
 
@@ -72,7 +72,8 @@ module MyData
     end
 
     def connection
-      @connection ||= Faraday.new(BASE_URL[@environment]) do |conn|
+      verify = @environment == 'production'
+      @connection ||= Faraday.new(BASE_URL[@environment], ssl: { verify: verify }) do |conn|
         conn.headers = headers
       end
     end
