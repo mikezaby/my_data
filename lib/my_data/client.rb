@@ -10,7 +10,7 @@ module MyData
     def initialize(user_id:, subscription_key:, environment:)
       @user_id = user_id
       @subscription_key = subscription_key
-      @environment = environment
+      @environment = environment.to_sym
     end
 
     def send_invoices(doc:)
@@ -55,6 +55,14 @@ module MyData
 
     private
 
+    def production?
+      @environment == :production
+    end
+
+    def sandbox?
+      @environment == :sandbox
+    end
+
     def base_request_docs(endpoint:, mark:, next_partition_key:, next_row_key:)
       params = { mark: mark }
 
@@ -72,8 +80,7 @@ module MyData
     end
 
     def connection
-      verify = @environment == 'production'
-      @connection ||= Faraday.new(BASE_URL[@environment], ssl: { verify: verify }) do |conn|
+      @connection ||= Faraday.new(BASE_URL[@environment], ssl: { verify: production? }) do |conn|
         conn.headers = headers
       end
     end
