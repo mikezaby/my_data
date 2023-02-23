@@ -118,6 +118,10 @@ RSpec.describe MyData::Client do
     let(:doc) { "" }
 
     context "when there is a validation error", vcr: { cassette_name: "send_invoices_validation" } do
+      it "has proper status code" do
+        expect(response_parser.status).to eq(:validation_error)
+      end
+
       it "returns a ResponseParser" do
         expect(response_parser).to be_a(MyData::ResponseParser)
       end
@@ -137,6 +141,10 @@ RSpec.describe MyData::Client do
 
     context "when request is successful", vcr: { cassette_name: "send_invoices_success", match_requests_on: [:body] } do
       let(:doc) { build(:invoices_doc).to_xml }
+
+      it "has proper status code" do
+        expect(response_parser.status).to eq(:success)
+      end
 
       it "has response that is succeded" do
         expect(response_parser).to be_success
