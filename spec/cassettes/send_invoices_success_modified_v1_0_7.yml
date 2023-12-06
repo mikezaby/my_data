@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://mydataapidev.aade.gr/SendInvoices
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <InvoicesDoc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.aade.gr/myDATA/invoice/v1.0" xmlns:schema="http://www.aade.gr/myDATA/invoice/v1.0 schemaLocation.xsd" xmlns:inv="http://www.aade.gr/myDATA/invoice/v1.0" xmlns:icls="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" xmlns:ecls="https://www.aade.gr/myDATA/expensesClassificaton/v1.0">
+          <invoice>
+            <issuer>
+              <vatNumber>111111111</vatNumber>
+              <country>GR</country>
+              <branch>0</branch>
+            </issuer>
+            <invoiceHeader>
+              <series>A</series>
+              <aa>1</aa>
+              <issueDate>2021-02-21</issueDate>
+              <invoiceType>11.2</invoiceType>
+              <currency>EUR</currency>
+            </invoiceHeader>
+            <paymentMethods>
+              <paymentMethodDetails>
+                <type>3</type>
+                <amount>124.0</amount>
+              </paymentMethodDetails>
+            </paymentMethods>
+            <invoiceDetails>
+              <lineNumber>1</lineNumber>
+              <netValue>100.0</netValue>
+              <vatCategory>1</vatCategory>
+              <vatAmount>24.0</vatAmount>
+              <incomeClassification>
+                <icls:classificationType>E3_561_003</icls:classificationType>
+                <icls:classificationCategory>category1_3</icls:classificationCategory>
+                <icls:amount>100.0</icls:amount>
+              </incomeClassification>
+            </invoiceDetails>
+            <invoiceSummary>
+              <totalNetValue>100.0</totalNetValue>
+              <totalVatAmount>24.0</totalVatAmount>
+              <totalWithheldAmount>0.0</totalWithheldAmount>
+              <totalFeesAmount>0.0</totalFeesAmount>
+              <totalStampDutyAmount>0.0</totalStampDutyAmount>
+              <totalOtherTaxesAmount>0.0</totalOtherTaxesAmount>
+              <totalDeductionsAmount>0.0</totalDeductionsAmount>
+              <totalGrossValue>124.0</totalGrossValue>
+              <incomeClassification>
+                <icls:classificationType>E3_561_003</icls:classificationType>
+                <icls:classificationCategory>category1_3</icls:classificationCategory>
+                <icls:amount>100.0</icls:amount>
+              </incomeClassification>
+            </invoiceSummary>
+          </invoice>
+        </InvoicesDoc>
+    headers:
+      Content-Type:
+        - application/xml
+      Accept:
+        - application/xml
+      Aade-User-Id:
+        - johndoe
+      Ocp-Apim-Subscription-Key:
+        - c9b79ff1841fb5cfecc66e1ea5a29b4d
+      User-Agent:
+        - Faraday v1.3.0
+      Accept-Encoding:
+        - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+        - Tue, 05 Dec 2023 17:31:28 GMT
+      Content-Type:
+        - application/xml; charset=utf-8
+      Content-Length:
+        - '728'
+      Connection:
+        - keep-alive
+      Request-Context:
+        - appId=cid-v1:13c4bd32-05a8-456a-a0a3-25e8a821dcf9
+    body:
+      encoding: UTF-8
+      string: "<string xmlns=\"http://schemas.microsoft.com/2003/10/Serialization/\">&lt;?xml
+      version=\"1.0\" encoding=\"utf-8\"?&gt;\r\n&lt;ResponseDoc xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
+      xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"&gt;\r\n  &lt;response&gt;\r\n
+      \   &lt;index&gt;1&lt;/index&gt;\r\n    &lt;invoiceUid&gt;4626E9F44FAC8F6BB3B8BBF36EF21377E8202407&lt;/invoiceUid&gt;\r\n
+      \   &lt;invoiceMark&gt;400001832005979&lt;/invoiceMark&gt;\r\n    &lt;qrUrl&gt;https://mydataapidev.aade.gr/TimologioQR/QRInfo?q=encoded_string_replaced_on_cassette&lt;/qrUrl&gt;\r\n
+      \   &lt;statusCode&gt;Success&lt;/statusCode&gt;\r\n  &lt;/response&gt;\r\n&lt;/ResponseDoc&gt;</string>"
+  recorded_at: Tue, 05 Dec 2023 17:31:28 GMT
+recorded_with: VCR 6.0.0

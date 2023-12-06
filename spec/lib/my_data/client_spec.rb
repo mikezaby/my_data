@@ -158,6 +158,14 @@ RSpec.describe MyData::Client do
         expect(response_parser.errors).to be_empty
       end
     end
+
+    context "when request is successful (myDATA API 1.0.7)", vcr: { cassette_name: "send_invoices_success_modified_v1_0_7", match_requests_on: [:body] } do
+      let(:doc) { build(:invoices_doc).to_xml }
+
+      it "has proper qr_url" do
+        expect(response_parser.response.response.first.qr_url).to eq("https://mydataapidev.aade.gr/TimologioQR/QRInfo?q=encoded_string_replaced_on_cassette")
+      end
+    end
   end
 
   describe "#cancel_invoice" do
