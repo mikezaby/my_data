@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:inv="http://www.aade.gr/myDATA/invoice/v1.0" xmlns:icls="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" xmlns:ecls="https://www.aade.gr/myDATA/expensesClassificaton/v1.0" targetNamespace="http://www.aade.gr/myDATA/invoice/v1.0" elementFormDefault="qualified" version="1.0.2">
-  <xs:import namespace="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" schemaLocation="incomeClassification-v1.0.2.xsd"/>
-  <xs:import namespace="https://www.aade.gr/myDATA/expensesClassificaton/v1.0" schemaLocation="expensesClassification-v1.0.2.xsd"/>
-	<xs:include schemaLocation="InvoicesDoc-v1.0.2.xsd"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:inv="http://www.aade.gr/myDATA/invoice/v1.0" xmlns:icls="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" xmlns:ecls="https://www.aade.gr/myDATA/expensesClassificaton/v1.0" targetNamespace="http://www.aade.gr/myDATA/invoice/v1.0" elementFormDefault="qualified" version="1.0.7">
+  <xs:import namespace="https://www.aade.gr/myDATA/incomeClassificaton/v1.0" schemaLocation="incomeClassification-v1.0.7.xsd"/>
+  <xs:import namespace="https://www.aade.gr/myDATA/expensesClassificaton/v1.0" schemaLocation="expensesClassification-v1.0.7.xsd"/>
+	<xs:include schemaLocation="InvoicesDoc-v1.0.7.xsd"/>
 	<xs:element name="RequestedDoc">
 		<xs:complexType>
 			<xs:sequence>
@@ -17,7 +17,7 @@
 				<xs:element name="cancelledInvoicesDoc" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence minOccurs="0" maxOccurs="unbounded">
-							<xs:element name="cancelledinvoice" type="inv:CancelledInvoiceType"/>
+							<xs:element name="cancelledInvoice" type="inv:CancelledInvoiceType"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
@@ -28,7 +28,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="expensesClassificationDoc" minOccurs="0">
+				<xs:element name="expensesClassificationsDoc" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence minOccurs="0" maxOccurs="unbounded">
 							<xs:element name="expensesInvoiceClassification" type="ecls:InvoiceExpensesClassificationType"/>
