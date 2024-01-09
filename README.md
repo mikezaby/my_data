@@ -85,6 +85,15 @@ client.request_transmitted_docs(mark: 1)
 client.cancel_invoice(mark: 400001831924171)
   ```
 
+## Development
+To update the XSD files, it's necessary to regenerate the associated resources. To accomplish this, follow these steps from the root project directory:
+Start the console by typing `console`.
+Once in the console, execute the following commands:
+```ruby
+MyData::Xsd::ResourceGenerator.generate_docs
+MyData::Xsd::ResourceGenerator.generate_types
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/mikezaby/my_data.
