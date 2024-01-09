@@ -20,9 +20,9 @@ module MyData::Xsd::Structure
   end
 
   def docs
-    @docs ||= Dir.glob("*.xsd", base: PATH).map do |file_name|
+    @docs ||= Dir.glob("*.xsd", base: PATH).to_h do |file_name|
       [file_name.sub(/-.+$/, "").camelize, MyData::Xsd::Doc.new(read_xsd(file_name))]
-    end.to_h
+    end
   end
 
   def complex_types

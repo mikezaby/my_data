@@ -27,7 +27,7 @@ module MyData
     private
 
     def type_cast_string(value)
-      value ? value.to_s.strip : nil
+      value&.to_s&.strip
     end
 
     def type_cast_integer(value)

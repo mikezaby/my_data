@@ -159,7 +159,8 @@ RSpec.describe MyData::Client do
       end
     end
 
-    context "when request is successful (myDATA API 1.0.7)", vcr: { cassette_name: "send_invoices_success_modified_v1_0_7", match_requests_on: [:body] } do
+    context "when request is successful (myDATA API 1.0.7)",
+            vcr: { cassette_name: "send_invoices_success_modified_v1_0_7", match_requests_on: [:body] } do
       let(:doc) { build(:invoices_doc).to_xml }
 
       it "has proper qr_url" do
