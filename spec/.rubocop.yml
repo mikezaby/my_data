@@ -3,7 +3,7 @@ inherit_from: ../.rubocop.yml
 require: rubocop-rspec
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context']
+  AllowedMethods: ['describe', 'context']
 
 Style/NumericLiterals:
   Enabled: false
