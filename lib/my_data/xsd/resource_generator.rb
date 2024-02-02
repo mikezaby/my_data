@@ -15,7 +15,7 @@ module MyData::Xsd::ResourceGenerator
   end
 
   def generate_types
-    MyData::Xsd::Structure.complex_types.each do |_, type|
+    MyData::Xsd::Structure.complex_types.each_value do |type|
       generate_file(name: type.name, namespace: type.namespace, xsd_mode: "xsd_complex_type")
     end
 

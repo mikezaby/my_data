@@ -67,7 +67,7 @@ module MyData
         format_attrs = attributes.map do |name|
           mapping = mappings[name]
           type = mapping[:type] == :resource ? mapping[:resource].name : mapping[:type]
-          type = mapping[:collection] ? "[#{type}]" : type
+          type = "[#{type}]" if mapping[:collection]
 
           "#{name}: #{type}"
         end
@@ -142,7 +142,7 @@ module MyData
     end
 
     def attributes=(attrs)
-      attrs = attrs.respond_to?(:attributes) ? attrs.attributes : attrs
+      attrs = attrs.attributes if attrs.respond_to?(:attributes)
 
       attrs.each do |key, value|
         next unless attribute_names.include?(key.to_s)
