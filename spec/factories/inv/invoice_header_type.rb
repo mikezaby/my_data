@@ -7,5 +7,7 @@ FactoryBot.define do
     issue_date { "2021-02-21" }
     invoice_type { "11.2" }
     currency { "EUR" }
+    dispatch_date { "2021-02-22" }
+    dispatch_time { "09:00:00" }
   end
 end

@@ -36,6 +36,8 @@ module MyData
       case mappings[key][:type]
       when :date
         value.strftime("%Y-%m-%d")
+      when :time
+        value.strftime("%H:%M:%S")
       else
         value.to_s
       end

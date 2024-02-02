@@ -20,6 +20,8 @@ http_interactions:
               <issueDate>2021-02-21</issueDate>
               <invoiceType>11.2</invoiceType>
               <currency>EUR</currency>
+              <dispatchDate>2021-02-22</dispatchDate>
+              <dispatchTime>09:00:00</dispatchTime>
             </invoiceHeader>
             <paymentMethods>
               <paymentMethodDetails>
